@@ -27,17 +27,6 @@ jobs:
           
       - uses: quarto-dev/quarto-actions/setup@v2
       
-      - name: Install rmarkdown
-        run: Rscript -e 'install.packages("rmarkdown")'
-        
-      - name: Install eurostat
-        run: Rscript -e 'install.packages("eurostat",  dependencies = TRUE)'
-        
-      - name: Install tidyverse
-        run: Rscript -e 'install.packages("tidyverse",  dependencies = TRUE)'
-        
-      - name: Install ggplot2
-        run: Rscript -e 'install.packages("ggplot2",  dependencies = TRUE)'
         
       - name: Install retroharmonize
         run: Rscript -e 'install.packages("retroharmonize",  dependencies = TRUE)'
@@ -46,6 +35,7 @@ jobs:
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          working-directory: survey
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
