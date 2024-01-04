@@ -82,6 +82,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="survey" class="level2">
 <h2 class="anchored" data-anchor-id="survey">Survey</h2>
 <p>Data was taken from <a href="https://search.gesis.org/?source=%7B%22sort%22%3A%5B%7B%22date_recency%22%3A%7B%22order%22%3A%22desc%22%7D%7D%5D%2C%22query%22%3A%7B%22bool%22%3A%7B%22must%22%3A%5B%7B%22query_string%22%3A%7B%22query%22%3A%22economic%22%2C%22default_operator%22%3A%22AND%22%7D%7D%5D%2C%22filter%22%3A%5B%7B%22term%22%3A%7B%22type%22%3A%22research_data%22%7D%7D%2C%7B%22term%22%3A%7B%22study_group.keyword%22%3A%22EB%20-%20Standard%20and%20Special%20Eurobarometer%22%7D%7D%5D%7D%7D%7D&amp;lang=en">here</a> with data format “.sav”</p>
+<p>Date(s) of Data Collection: 12.01.2023 - 06.02.2023</p>
+<p>GESIS, Cologne. ZA7953 Data file Version 1.0.0, https://doi.org/10.4232/1.14081 Other Title (type): Standard Eurobarometer 98 (COVID-19 Pandemic) (Subtitle)</p>
+<p>Abstract: Since the early 1970s the European Commission´s Standard &amp; Special Eurobarometer are regularly monitoring the public opinion in the European Union member countries. Principal investigators are the Directorate-General Communication and on occasion other departments of the European Commission or the European Parliament. Over time, candidate and accession countries were included in the Standard Eurobarometer Series. Selected questions or modules may not have been surveyed in each sample. Please consult the basic questionnaire for more information on country filter instructions or other questionnaire routing filters. In this study all question modules are in the standard Eurobarometer context: 1. Standard EU and trend questions, 2. Europeans’ priorities, 3. The EU and the Coronavirus pandemic, 4. European citizenship, 5. The EU’s response to the war in Ukraine, 6. Media use and political information.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(retroharmonize)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">".sav"</span>)</span>
@@ -104,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # ℹ 22 more rows</code></pre>
 </div>
 </div>
-<p>For data taken from EU with “.xslx” format taken from <a href="https://data.europa.eu/data/datasets/s2970_fl531_eng?locale=en">here</a></p>
+<p>For data taken from EU with “.xslx” format taken from <a href="https://data.europa.eu/data/datasets/s2970_fl531_eng?locale=en">here</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the readxl package</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>

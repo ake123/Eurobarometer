@@ -4,7 +4,7 @@ on:
     - master
     paths:
     - '**.yml'
-    - '**.qmd'
+    - 'survey/**/*.qmd'
   workflow_dispatch:
 permissions: write-all
 
@@ -46,7 +46,6 @@ jobs:
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
-           path: survey/
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
