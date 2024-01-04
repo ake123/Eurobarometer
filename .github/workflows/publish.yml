@@ -27,6 +27,8 @@ jobs:
           
       - uses: quarto-dev/quarto-actions/setup@v2
       
+      - name: Install readxl
+        run: Rscript -e 'install.packages("readxl",  dependencies = TRUE)'
         
       - name: Install retroharmonize
         run: Rscript -e 'install.packages("retroharmonize",  dependencies = TRUE)'
