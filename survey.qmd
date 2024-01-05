@@ -49,10 +49,13 @@ sheet_names <- excel_sheets(excel_file)
 data_frames <- list()
 
 # Read each sheet and store it as a separate data frame
-for (i in 1:length(sheet_names)) {
+for (i in 3:length(sheet_names)) {
   sheet_name <- sheet_names[i]
-  data_frames[[sheet_name]] <- read_excel(excel_file, sheet = sheet_name)
+  # Specify the range (rows 10-26 and all columns)
+  range <- cell_rows(10:26)
+  data_frames[[sheet_name]] <- read_excel(excel_file, sheet = sheet_name, range = range)
 }
+
 
 # Optional: Convert the list to separate data frames
 list2env(data_frames, envir = .GlobalEnv)
