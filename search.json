@@ -1,31 +1,10 @@
 [
   {
-    "objectID": "survey.html",
-    "href": "survey.html",
-    "title": "Survey",
-    "section": "",
-    "text": "The European Social Survey provides data on attitudes, beliefs and behaviour in 30 countries. ESS is coordinated by the Centre for Comparative Social Surveys (City University, London) in partnership with the Catholic University of Leuven (Belgium); GESIS (Germany); NSD (Norway); SCP (Netherlands) and the University of Amsterdam."
-  },
-  {
-    "objectID": "survey.html#ess-social-survey",
-    "href": "survey.html#ess-social-survey",
-    "title": "Survey",
-    "section": "",
-    "text": "The European Social Survey provides data on attitudes, beliefs and behaviour in 30 countries. ESS is coordinated by the Centre for Comparative Social Surveys (City University, London) in partnership with the Catholic University of Leuven (Belgium); GESIS (Germany); NSD (Norway); SCP (Netherlands) and the University of Amsterdam."
-  },
-  {
-    "objectID": "survey.html#ess-time-period",
-    "href": "survey.html#ess-time-period",
-    "title": "Survey",
-    "section": "ESS time period",
-    "text": "ESS time period\nTen European Social Survey waves are available:\nESS Round 10-2020 ESS Round 9 - 2018 ESS Round 8 - 2016 ESS Round 7 - 2014 ESS Round 6 - 2012 ESS Round 5 - 2010 ESS Round 4 - 2008 ESS Round 3 - 2006 ESS Round 2 - 2004 ESS Round 1 - 2002"
-  },
-  {
     "objectID": "survey.html#how-to-access-data",
     "href": "survey.html#how-to-access-data",
     "title": "Survey",
     "section": "How to access data",
-    "text": "How to access data\nEUI members can access Eurobarometer data via GESIS (the German social science infrastructure service provider) and via ICPSR (the Inter-University Consortium for Political and Social Research archive).\n\nEurobarometer via GESIS\nAccess to primary Eurobarometer data is provided by the GESIS Eurobarometer Data Service:\nStandard and Special Eurobarometer Mannheim Eurobarometer Trend File Central and Eastern Eurobarometer Candidate Countries Eurobarometer Flash Eurobarometer surveys.\n\n\nEurobarometer via ICPSR\nEUI members also have access to Eurobarometer files hosted by the ICPSR data archive. Data from ICPSR can only be downloaded by Library administrator. Follow these instructions:\nLocate the required data study number(s) in the ICPSR data catalogue Send the study number of the dataset required to econlibrary@eui.eu Please indicate the format in which the data are required (Stata, SAS &c.) The Library provides access via MS OneDrive. ICPSR instructions on using ZIP files to compress and decompress data are on this page\nEUI ICT Service instructions on using ZIP files to compress and decompress data are on this page\nRead the Responsible Use Statement on the ICPSR site.\nEuropean statistical data resources (EUI Library)."
+    "text": "How to access data\nEUI members can access Eurobarometer data via GESIS (the German social science infrastructure service provider) and via ICPSR (the Inter-University Consortium for Political and Social Research archive).\n\nEurobarometer via GESIS\nAccess to primary Eurobarometer data is provided by the GESIS Eurobarometer Data Service:\n\nStandard and Special Eurobarometer\nMannheim Eurobarometer Trend File\nCentral and Eastern Eurobarometer\nCandidate Countries Eurobarometer\nFlash Eurobarometer surveys.\n\n\n\nEurobarometer via ICPSR\nEUI members also have access to Eurobarometer files hosted by the ICPSR data archive. Data from ICPSR can only be downloaded by Library administrator. Follow these instructions:\nLocate the required data study number(s) in the ICPSR data catalogue Send the study number of the dataset required to econlibrary@eui.eu Please indicate the format in which the data are required (Stata, SAS &c.) The Library provides access via MS OneDrive. ICPSR instructions on using ZIP files to compress and decompress data are on this page\nEUI ICT Service instructions on using ZIP files to compress and decompress data are on this page\nRead the Responsible Use Statement on the ICPSR site.\nEuropean statistical data resources (EUI Library)."
   },
   {
     "objectID": "survey.html#gesis-survey-data",
