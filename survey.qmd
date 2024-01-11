@@ -27,11 +27,11 @@ Access to primary Eurobarometer data is provided by the GESIS Eurobarometer Data
 
 EUI members also have access to Eurobarometer files hosted by the ICPSR data archive. Data from ICPSR can only be downloaded by Library administrator. Follow these instructions:
 
-Locate the required data study number(s) in the ICPSR data catalogue
-Send the study number of the dataset required to econlibrary@eui.eu
-Please indicate the format in which the data are required (Stata, SAS &c.)
-The Library provides access via MS OneDrive.
-ICPSR instructions on using ZIP files to compress and decompress data are on this page
+- Locate the required data study number(s) in the ICPSR data catalogue
+- Send the study number of the dataset required to econlibrary@eui.eu
+- Indicate the format in which the data are required (Stata, SAS &c.)
+- The Library provides access via MS OneDrive.
+- ICPSR instructions on using ZIP files to compress and decompress data are on this page
 
 EUI ICT Service instructions on using ZIP files to compress and decompress data are on this page
 
