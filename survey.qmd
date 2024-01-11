@@ -6,24 +6,7 @@ execute:
   warning: false
 ---
 
-## ESS social survey
-
-The European Social Survey provides data on attitudes, beliefs and behaviour in 30 countries. ESS is coordinated by the Centre for Comparative Social Surveys (City University, London) in partnership with the Catholic University of Leuven (Belgium); GESIS (Germany); NSD (Norway); SCP (Netherlands) and the University of Amsterdam.
-
-## ESS time period
-
-Ten European Social Survey waves are available:
-
-ESS Round 10-2020
-ESS Round 9 - 2018
-ESS Round 8 - 2016
-ESS Round 7 - 2014
-ESS Round 6 - 2012
-ESS Round 5 - 2010
-ESS Round 4 - 2008
-ESS Round 3 - 2006
-ESS Round 2 - 2004
-ESS Round 1 - 2002
+## Eurobarometer
 
 ## How to access data
 
@@ -34,11 +17,11 @@ EUI members can access Eurobarometer data via GESIS (the German social science i
 
 Access to primary Eurobarometer data is provided by the GESIS Eurobarometer Data Service:
 
-Standard and Special Eurobarometer
-Mannheim Eurobarometer Trend File
-Central and Eastern Eurobarometer
-Candidate Countries Eurobarometer
-Flash Eurobarometer surveys.
+- Standard and Special Eurobarometer
+- Mannheim Eurobarometer Trend File
+- Central and Eastern Eurobarometer
+- Candidate Countries Eurobarometer
+- Flash Eurobarometer surveys.
 
 ### Eurobarometer via ICPSR
 
