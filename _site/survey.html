@@ -132,11 +132,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </i> 
  <span class="menu-text"></span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com" rel="" target=""><i class="bi bi-twitter" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
 </ul>
             <div class="quarto-navbar-tools">
 </div>
@@ -169,8 +164,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="eurobarometer" class="level2">
+<h2 class="anchored" data-anchor-id="eurobarometer">Eurobarometer</h2>
+</section>
+<section id="how-to-access-data" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-access-data">How to access data</h2>
+<p>EUI members can access Eurobarometer data via GESIS (the German social science infrastructure service provider) and via ICPSR (the Inter-University Consortium for Political and Social Research archive).</p>
+<section id="eurobarometer-via-gesis" class="level3">
+<h3 class="anchored" data-anchor-id="eurobarometer-via-gesis">Eurobarometer via GESIS</h3>
+<p>Access to primary Eurobarometer data is provided by the GESIS Eurobarometer Data Service:</p>
+<ul>
+<li>Standard and Special Eurobarometer</li>
+<li>Mannheim Eurobarometer Trend File</li>
+<li>Central and Eastern Eurobarometer</li>
+<li>Candidate Countries Eurobarometer</li>
+<li>Flash Eurobarometer surveys.</li>
+</ul>
+</section>
+<section id="eurobarometer-via-icpsr" class="level3">
+<h3 class="anchored" data-anchor-id="eurobarometer-via-icpsr">Eurobarometer via ICPSR</h3>
+<p>EUI members also have access to Eurobarometer files hosted by the ICPSR data archive. Data from ICPSR can only be downloaded by Library administrator. Follow these instructions:</p>
+<ul>
+<li>Locate the required data study number(s) in the ICPSR data catalogue</li>
+<li>Send the study number of the dataset required to econlibrary@eui.eu</li>
+<li>Indicate the format in which the data are required (Stata, SAS &amp;c.)</li>
+<li>The Library provides access via MS OneDrive.</li>
+<li>ICPSR instructions on using ZIP files to compress and decompress data are on this page</li>
+</ul>
+<p>EUI ICT Service instructions on using ZIP files to compress and decompress data are on this page</p>
+<p><a href="https://www.icpsr.umich.edu/web/pages/datamanagement/lifecycle/access.html">Read the Responsible Use Statement on the ICPSR site</a>.</p>
+<p>European statistical data resources (EUI Library).</p>
+</section>
+</section>
 <section id="gesis-survey-data" class="level2">
-<h2 class="anchored" data-anchor-id="gesis-survey-data">Gesis survey Data</h2>
+<h2 class="anchored" data-anchor-id="gesis-survey-data">GESIS survey Data</h2>
 <p>Data was taken from <a href="https://search.gesis.org/?source=%7B%22sort%22%3A%5B%7B%22date_recency%22%3A%7B%22order%22%3A%22desc%22%7D%7D%5D%2C%22query%22%3A%7B%22bool%22%3A%7B%22must%22%3A%5B%7B%22query_string%22%3A%7B%22query%22%3A%22economic%22%2C%22default_operator%22%3A%22AND%22%7D%7D%5D%2C%22filter%22%3A%5B%7B%22term%22%3A%7B%22type%22%3A%22research_data%22%7D%7D%2C%7B%22term%22%3A%7B%22study_group.keyword%22%3A%22EB%20-%20Standard%20and%20Special%20Eurobarometer%22%7D%7D%5D%7D%7D%7D&amp;lang=en">here</a> with data format “.sav”</p>
 <p>Date(s) of Data Collection: 12.01.2023 - 06.02.2023</p>
 <p>GESIS, Cologne. ZA7953 Data file Version 1.0.0, https://doi.org/10.4232/1.14081 Other Title (type): Standard Eurobarometer 98 (COVID-19 Pandemic) (Subtitle)</p>
@@ -200,64 +227,119 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="excel-data-from-eu-commission" class="level2">
 <h2 class="anchored" data-anchor-id="excel-data-from-eu-commission">Excel data from EU commission</h2>
-<p>For data taken from EU with “.xslx” format taken from <a href="https://data.europa.eu/data/datasets/s2970_fl531_eng?locale=en">here</a>.</p>
+<p>For data taken from EU with “.xslx” format taken from <a href="https://data.europa.eu/data/datasets/s2970_fl531_eng?locale=en">here</a> and it’s only for testing purpose.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the readxl package</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the path to your Excel file</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>excel_file <span class="ot">&lt;-</span> <span class="st">"survey/fl_531_volume_C_SK.xlsx"</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the names of all sheets in the Excel file</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>sheet_names <span class="ot">&lt;-</span> <span class="fu">excel_sheets</span>(excel_file)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize an empty list to store data frames</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>data_frames <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Read each sheet and store it as a separate data frame</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">3</span><span class="sc">:</span><span class="fu">length</span>(sheet_names)) {</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  sheet_name <span class="ot">&lt;-</span> sheet_names[i]</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Specify the range (rows 10-26 and all columns)</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  range <span class="ot">&lt;-</span> <span class="fu">cell_rows</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">26</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  data_frames[[sheet_name]] <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(excel_file, <span class="at">sheet =</span> sheet_name, <span class="at">range =</span> range)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Optional: Convert the list to separate data frames</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="fu">list2env</span>(data_frames, <span class="at">envir =</span> .GlobalEnv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the path to your Excel file</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>excel_file <span class="ot">&lt;-</span> <span class="st">"survey/fl_531_volume_C_SK.xlsx"</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the names of all sheets in the Excel file</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>sheet_names <span class="ot">&lt;-</span> <span class="fu">excel_sheets</span>(excel_file)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize an empty tibble to store the combined data</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>()</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Read each sheet (starting from the third sheet) and append to the combined data frame</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (sheet_name <span class="cf">in</span> sheet_names[<span class="dv">3</span><span class="sc">:</span><span class="fu">length</span>(sheet_names)]) {</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define the range to read (rows 11 to 26)</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  range_to_read <span class="ot">&lt;-</span> <span class="fu">cell_rows</span>(<span class="dv">11</span><span class="sc">:</span><span class="dv">58</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Read the current sheet as a tibble within the specified range</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  current_data <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">read_excel</span>(excel_file, <span class="at">sheet =</span> sheet_name, <span class="at">range =</span> range_to_read)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add a column to identify the sheet (survey question)</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  current_data<span class="sc">$</span>SheetName <span class="ot">&lt;-</span> sheet_name</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Bind the current data to the combined data frame</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  combined_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(combined_data, current_data)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(combined_data)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co"># # Define a threshold for NA proportion</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co"># threshold &lt;- 0.9 # Example: 90% NA values</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co"># # Remove columns where the majority of values are NA</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="co"># na_cols &lt;- sapply(combined_data, function(x) mean(is.na(x))) &gt; threshold</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co"># combined_data &lt;- combined_data[, !na_cols]</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="co"># # Display the structure of the combined data frame</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(combined_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;environment: R_GlobalEnv&gt;</code></pre>
+<pre><code>tibble [301 × 35] (S3: tbl_df/tbl/data.frame)
+ $ ...1                                                          : chr [1:301] "Base: Total" "Base: Weighted Total" "Yes" "No" ...
+ $ SK                                                            : chr [1:301] "1009" "1009" "731" "265" ...
+ $ Gender...3                                                    : chr [1:301] "507" "486" "366" "117" ...
+ $ Gender...4                                                    : chr [1:301] "493" "516" "363" "143" ...
+ $ Gender...5                                                    : chr [1:301] "9" "7" "2" "5" ...
+ $ Age...6                                                       : chr [1:301] "62" "118" "74" "44" ...
+ $ Age...7                                                       : chr [1:301] "251" "248" "187" "60" ...
+ $ Age...8                                                       : chr [1:301] "341" "280" "212" "64" ...
+ $ Age...9                                                       : chr [1:301] "355" "363" "259" "97" ...
+ $ Education (Age of end of)...10                                : chr [1:301] "10" "10" "4" "6" ...
+ $ Education (Age of end of)...11                                : chr [1:301] "395" "404" "263" "134" ...
+ $ Education (Age of end of)...12                                : chr [1:301] "552" "496" "392" "98" ...
+ $ Education (Age of end of)...13                                : chr [1:301] "46" "94" "68" "26" ...
+ $ Subjective urbanisation...14                                  : chr [1:301] "362" "397" "266" "127" ...
+ $ Subjective urbanisation...15                                  : chr [1:301] "368" "410" "314" "89" ...
+ $ Subjective urbanisation...16                                  : chr [1:301] "275" "198" "147" "49" ...
+ $ Household size (15+)...17                                     : chr [1:301] "260" "270" "197" "67" ...
+ $ Household size (15+)...18                                     : chr [1:301] "437" "401" "314" "87" ...
+ $ Household size (15+)...19                                     : chr [1:301] "156" "168" "121" "45" ...
+ $ Household size (15+)...20                                     : chr [1:301] "150" "164" "95" "65" ...
+ $ Respondent occupation scale...21                              : chr [1:301] "184" "162" "125" "34" ...
+ $ Respondent occupation scale...22                              : chr [1:301] "513" "393" "309" "77" ...
+ $ Respondent occupation scale...23                              : chr [1:301] "21" "18" "10" "8" ...
+ $ Respondent occupation scale...24                              : chr [1:301] "286" "431" "281" "146" ...
+ $ Landline/mobile...25                                          : chr [1:301] "819" "820" "596" "214" ...
+ $ Landline/mobile...26                                          : chr [1:301] "3" "9" "9" "0" ...
+ $ Landline/mobile...27                                          : chr [1:301] "187" "180" "126" "51" ...
+ $ Awareness of EU co-financed projects...28                     : chr [1:301] "750" "731" "731" "0" ...
+ $ Awareness of EU co-financed projects...29                     : chr [1:301] "245" "265" "0" "265" ...
+ $ Impact of EU support on the development of cities/regions...30: chr [1:301] "652" "629" "629" "0" ...
+ $ Impact of EU support on the development of cities/regions...31: chr [1:301] "45" "45" "45" "0" ...
+ $ Impact of EU support on the development of cities/regions...32: chr [1:301] "20" "19" "19" "0" ...
+ $ Personally benefited from ERDF or CF...33                     : chr [1:301] "378" "362" "334" "24" ...
+ $ Personally benefited from ERDF or CF...34                     : chr [1:301] "576" "595" "358" "227" ...
+ $ SheetName                                                     : chr [1:301] "Q1A" "Q1A" "Q1A" "Q1A" ...
+ - attr(*, "na.action")= 'omit' Named int [1:1391] 1 2 4 6 8 9 11 12 14 15 ...
+  ..- attr(*, "names")= chr [1:1391] "1" "2" "4" "6" ...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(Q9)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Optionally, view the first few rows of the combined data</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(combined_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
-<col style="width: 7%">
+<col style="width: 2%">
 <col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 3%">
-<col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 3%">
-<col style="width: 3%">
-<col style="width: 3%">
-<col style="width: 3%">
 <col style="width: 1%">
 <col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 2%">
+<col style="width: 2%">
 <col style="width: 2%">
 <col style="width: 4%">
 <col style="width: 4%">
@@ -266,155 +348,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <col style="width: 6%">
 <col style="width: 4%">
 <col style="width: 4%">
+<col style="width: 1%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">…1</th>
-<th style="text-align: left;">…2</th>
-<th style="text-align: left;">…3</th>
-<th style="text-align: left;">…4</th>
-<th style="text-align: left;">…5</th>
-<th style="text-align: left;">…6</th>
-<th style="text-align: left;">…7</th>
-<th style="text-align: left;">…8</th>
-<th style="text-align: left;">…9</th>
-<th style="text-align: left;">…10</th>
-<th style="text-align: left;">…11</th>
-<th style="text-align: left;">…12</th>
-<th style="text-align: left;">…13</th>
-<th style="text-align: left;">…14</th>
-<th style="text-align: left;">…15</th>
-<th style="text-align: left;">…16</th>
-<th style="text-align: left;">…17</th>
-<th style="text-align: left;">…18</th>
-<th style="text-align: left;">…19</th>
-<th style="text-align: left;">…20</th>
-<th style="text-align: left;">…21</th>
-<th style="text-align: left;">…22</th>
-<th style="text-align: left;">…23</th>
-<th style="text-align: left;">…24</th>
-<th style="text-align: left;">…25</th>
-<th style="text-align: left;">…26</th>
-<th style="text-align: left;">…27</th>
-<th style="text-align: left;">…28</th>
-<th style="text-align: left;">…29</th>
-<th style="text-align: left;">…30</th>
-<th style="text-align: left;">…31</th>
-<th style="text-align: left;">…32</th>
-<th style="text-align: left;">…33</th>
-<th style="text-align: left;">…34</th>
+<th style="text-align: left;">SK</th>
+<th style="text-align: left;">Gender…3</th>
+<th style="text-align: left;">Gender…4</th>
+<th style="text-align: left;">Gender…5</th>
+<th style="text-align: left;">Age…6</th>
+<th style="text-align: left;">Age…7</th>
+<th style="text-align: left;">Age…8</th>
+<th style="text-align: left;">Age…9</th>
+<th style="text-align: left;">Education (Age of end of)…10</th>
+<th style="text-align: left;">Education (Age of end of)…11</th>
+<th style="text-align: left;">Education (Age of end of)…12</th>
+<th style="text-align: left;">Education (Age of end of)…13</th>
+<th style="text-align: left;">Subjective urbanisation…14</th>
+<th style="text-align: left;">Subjective urbanisation…15</th>
+<th style="text-align: left;">Subjective urbanisation…16</th>
+<th style="text-align: left;">Household size (15+)…17</th>
+<th style="text-align: left;">Household size (15+)…18</th>
+<th style="text-align: left;">Household size (15+)…19</th>
+<th style="text-align: left;">Household size (15+)…20</th>
+<th style="text-align: left;">Respondent occupation scale…21</th>
+<th style="text-align: left;">Respondent occupation scale…22</th>
+<th style="text-align: left;">Respondent occupation scale…23</th>
+<th style="text-align: left;">Respondent occupation scale…24</th>
+<th style="text-align: left;">Landline/mobile…25</th>
+<th style="text-align: left;">Landline/mobile…26</th>
+<th style="text-align: left;">Landline/mobile…27</th>
+<th style="text-align: left;">Awareness of EU co-financed projects…28</th>
+<th style="text-align: left;">Awareness of EU co-financed projects…29</th>
+<th style="text-align: left;">Impact of EU support on the development of cities/regions…30</th>
+<th style="text-align: left;">Impact of EU support on the development of cities/regions…31</th>
+<th style="text-align: left;">Impact of EU support on the development of cities/regions…32</th>
+<th style="text-align: left;">Personally benefited from ERDF or CF…33</th>
+<th style="text-align: left;">Personally benefited from ERDF or CF…34</th>
+<th style="text-align: left;">SheetName</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">SK</td>
-<td style="text-align: left;">Gender</td>
-<td style="text-align: left;">Gender</td>
-<td style="text-align: left;">Gender</td>
-<td style="text-align: left;">Age</td>
-<td style="text-align: left;">Age</td>
-<td style="text-align: left;">Age</td>
-<td style="text-align: left;">Age</td>
-<td style="text-align: left;">Education (Age of end of)</td>
-<td style="text-align: left;">Education (Age of end of)</td>
-<td style="text-align: left;">Education (Age of end of)</td>
-<td style="text-align: left;">Education (Age of end of)</td>
-<td style="text-align: left;">Subjective urbanisation</td>
-<td style="text-align: left;">Subjective urbanisation</td>
-<td style="text-align: left;">Subjective urbanisation</td>
-<td style="text-align: left;">Household size (15+)</td>
-<td style="text-align: left;">Household size (15+)</td>
-<td style="text-align: left;">Household size (15+)</td>
-<td style="text-align: left;">Household size (15+)</td>
-<td style="text-align: left;">Respondent occupation scale</td>
-<td style="text-align: left;">Respondent occupation scale</td>
-<td style="text-align: left;">Respondent occupation scale</td>
-<td style="text-align: left;">Respondent occupation scale</td>
-<td style="text-align: left;">Landline/mobile</td>
-<td style="text-align: left;">Landline/mobile</td>
-<td style="text-align: left;">Landline/mobile</td>
-<td style="text-align: left;">Awareness of EU co-financed projects</td>
-<td style="text-align: left;">Awareness of EU co-financed projects</td>
-<td style="text-align: left;">Impact of EU support on the development of cities/regions</td>
-<td style="text-align: left;">Impact of EU support on the development of cities/regions</td>
-<td style="text-align: left;">Impact of EU support on the development of cities/regions</td>
-<td style="text-align: left;">Personally benefited from ERDF or CF</td>
-<td style="text-align: left;">Personally benefited from ERDF or CF</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">SK</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: left;">Female</td>
-<td style="text-align: left;">In another way / No answer</td>
-<td style="text-align: left;">15-24</td>
-<td style="text-align: left;">25-39</td>
-<td style="text-align: left;">40-54</td>
-<td style="text-align: left;">55+</td>
-<td style="text-align: left;">Up to 15 years</td>
-<td style="text-align: left;">16-19 years</td>
-<td style="text-align: left;">20+ years</td>
-<td style="text-align: left;">Still studying</td>
-<td style="text-align: left;">Rural area</td>
-<td style="text-align: left;">Small/medium-sized town</td>
-<td style="text-align: left;">Large town / city</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">4+</td>
-<td style="text-align: left;">Self-employed</td>
-<td style="text-align: left;">Employee</td>
-<td style="text-align: left;">Manual worker</td>
-<td style="text-align: left;">Not working</td>
-<td style="text-align: left;">Mobile only</td>
-<td style="text-align: left;">Landline only</td>
-<td style="text-align: left;">Landline &amp; mobile</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">No</td>
-<td style="text-align: left;">Positive</td>
-<td style="text-align: left;">Negative</td>
-<td style="text-align: left;">No impact</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">No</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">(A)</td>
-<td style="text-align: left;">(B)</td>
-<td style="text-align: left;">(C)</td>
-<td style="text-align: left;">(A)</td>
-<td style="text-align: left;">(B)</td>
-<td style="text-align: left;">(C)</td>
-<td style="text-align: left;">(D)</td>
-<td style="text-align: left;">(A)</td>
-<td style="text-align: left;">(B)</td>
-<td style="text-align: left;">(C)</td>
-<td style="text-align: left;">(D)</td>
-<td style="text-align: left;">(A)</td>
-<td style="text-align: left;">(B)</td>
-<td style="text-align: left;">(C)</td>
-<td style="text-align: left;">(A)</td>
-<td style="text-align: left;">(B)</td>
-<td style="text-align: left;">(C)</td>
-<td style="text-align: left;">(D)</td>
-<td style="text-align: left;">(A)</td>
-<td style="text-align: left;">(B)</td>
-<td style="text-align: left;">(C)</td>
-<td style="text-align: left;">(D)</td>
-<td style="text-align: left;">(A)</td>
-<td style="text-align: left;">(B)</td>
-<td style="text-align: left;">(C)</td>
-<td style="text-align: left;">(A)</td>
-<td style="text-align: left;">(B)</td>
-<td style="text-align: left;">(A)</td>
-<td style="text-align: left;">(B)</td>
-<td style="text-align: left;">(C)</td>
-<td style="text-align: left;">(A)</td>
-<td style="text-align: left;">(B)</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Base: Total</td>
 <td style="text-align: left;">1009</td>
 <td style="text-align: left;">507</td>
@@ -449,42 +425,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;">20</td>
 <td style="text-align: left;">378</td>
 <td style="text-align: left;">576</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Q1A</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Base: Weighted Total</td>
@@ -521,366 +462,460 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;">19</td>
 <td style="text-align: left;">362</td>
 <td style="text-align: left;">595</td>
+<td style="text-align: left;">Q1A</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Yes, I am aware about the Baltic Sea area strategy</td>
-<td style="text-align: left;">105</td>
-<td style="text-align: left;">55</td>
-<td style="text-align: left;">50</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">14</td>
-<td style="text-align: left;">30</td>
-<td style="text-align: left;">18</td>
-<td style="text-align: left;">43</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">37</td>
-<td style="text-align: left;">59</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">731</td>
+<td style="text-align: left;">366</td>
+<td style="text-align: left;">363</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">74</td>
+<td style="text-align: left;">187</td>
+<td style="text-align: left;">212</td>
+<td style="text-align: left;">259</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">263</td>
+<td style="text-align: left;">392</td>
+<td style="text-align: left;">68</td>
+<td style="text-align: left;">266</td>
+<td style="text-align: left;">314</td>
+<td style="text-align: left;">147</td>
+<td style="text-align: left;">197</td>
+<td style="text-align: left;">314</td>
+<td style="text-align: left;">121</td>
+<td style="text-align: left;">95</td>
+<td style="text-align: left;">125</td>
+<td style="text-align: left;">309</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">281</td>
+<td style="text-align: left;">596</td>
 <td style="text-align: left;">9</td>
-<td style="text-align: left;">38</td>
-<td style="text-align: left;">35</td>
-<td style="text-align: left;">31</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">44</td>
-<td style="text-align: left;">27</td>
-<td style="text-align: left;">14</td>
+<td style="text-align: left;">126</td>
+<td style="text-align: left;">731</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">629</td>
+<td style="text-align: left;">45</td>
 <td style="text-align: left;">19</td>
-<td style="text-align: left;">33</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">49</td>
-<td style="text-align: left;">85</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">84</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">72</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">40</td>
-<td style="text-align: left;">58</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">10.4</td>
-<td style="text-align: left;">11.3</td>
-<td style="text-align: left;">9.6</td>
-<td style="text-align: left;">6.5</td>
-<td style="text-align: left;">11.6</td>
-<td style="text-align: left;">12.2</td>
-<td style="text-align: left;">6.3</td>
-<td style="text-align: left;">11.9</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">9.1</td>
-<td style="text-align: left;">11.9</td>
-<td style="text-align: left;">9.6999999999999993</td>
-<td style="text-align: left;">9.6</td>
-<td style="text-align: left;">8.4</td>
-<td style="text-align: left;">15.8</td>
-<td style="text-align: left;">7.3</td>
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">16.100000000000001</td>
-<td style="text-align: left;">8.4</td>
-<td style="text-align: left;">11.9</td>
-<td style="text-align: left;">8.5</td>
-<td style="text-align: left;">16.399999999999999</td>
-<td style="text-align: left;">11.5</td>
-<td style="text-align: left;">10.3</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">11.2</td>
-<td style="text-align: left;">11.5</td>
-<td style="text-align: left;">7.5</td>
-<td style="text-align: left;">11.4</td>
-<td style="text-align: left;">18.100000000000001</td>
-<td style="text-align: left;">2.1</td>
-<td style="text-align: left;">11.2</td>
-<td style="text-align: left;">9.6999999999999993</td>
+<td style="text-align: left;">334</td>
+<td style="text-align: left;">358</td>
+<td style="text-align: left;">Q1A</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">C</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">C</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">B</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">A</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">265</td>
+<td style="text-align: left;">117</td>
+<td style="text-align: left;">143</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">44</td>
+<td style="text-align: left;">60</td>
+<td style="text-align: left;">64</td>
+<td style="text-align: left;">97</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">134</td>
+<td style="text-align: left;">98</td>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">127</td>
+<td style="text-align: left;">89</td>
+<td style="text-align: left;">49</td>
+<td style="text-align: left;">67</td>
+<td style="text-align: left;">87</td>
+<td style="text-align: left;">45</td>
+<td style="text-align: left;">65</td>
+<td style="text-align: left;">34</td>
+<td style="text-align: left;">77</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">146</td>
+<td style="text-align: left;">214</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">51</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">265</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">227</td>
+<td style="text-align: left;">Q1A</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Yes, I am aware about the Danube river area strategy</td>
-<td style="text-align: left;">286</td>
-<td style="text-align: left;">138</td>
+<td style="text-align: left;">Don’t know</td>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Q1A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Base: Total</td>
+<td style="text-align: left;">750</td>
+<td style="text-align: left;">388</td>
+<td style="text-align: left;">360</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">38</td>
+<td style="text-align: left;">190</td>
+<td style="text-align: left;">260</td>
+<td style="text-align: left;">262</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">266</td>
+<td style="text-align: left;">445</td>
+<td style="text-align: left;">31</td>
+<td style="text-align: left;">260</td>
+<td style="text-align: left;">279</td>
+<td style="text-align: left;">207</td>
+<td style="text-align: left;">188</td>
+<td style="text-align: left;">348</td>
+<td style="text-align: left;">115</td>
+<td style="text-align: left;">94</td>
+<td style="text-align: left;">140</td>
+<td style="text-align: left;">403</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">192</td>
+<td style="text-align: left;">606</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">141</td>
+<td style="text-align: left;">750</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">652</td>
+<td style="text-align: left;">45</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">350</td>
+<td style="text-align: left;">360</td>
+<td style="text-align: left;">Q1B1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">tail</span>(combined_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 1%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">…1</th>
+<th style="text-align: left;">SK</th>
+<th style="text-align: left;">Gender…3</th>
+<th style="text-align: left;">Gender…4</th>
+<th style="text-align: left;">Gender…5</th>
+<th style="text-align: left;">Age…6</th>
+<th style="text-align: left;">Age…7</th>
+<th style="text-align: left;">Age…8</th>
+<th style="text-align: left;">Age…9</th>
+<th style="text-align: left;">Education (Age of end of)…10</th>
+<th style="text-align: left;">Education (Age of end of)…11</th>
+<th style="text-align: left;">Education (Age of end of)…12</th>
+<th style="text-align: left;">Education (Age of end of)…13</th>
+<th style="text-align: left;">Subjective urbanisation…14</th>
+<th style="text-align: left;">Subjective urbanisation…15</th>
+<th style="text-align: left;">Subjective urbanisation…16</th>
+<th style="text-align: left;">Household size (15+)…17</th>
+<th style="text-align: left;">Household size (15+)…18</th>
+<th style="text-align: left;">Household size (15+)…19</th>
+<th style="text-align: left;">Household size (15+)…20</th>
+<th style="text-align: left;">Respondent occupation scale…21</th>
+<th style="text-align: left;">Respondent occupation scale…22</th>
+<th style="text-align: left;">Respondent occupation scale…23</th>
+<th style="text-align: left;">Respondent occupation scale…24</th>
+<th style="text-align: left;">Landline/mobile…25</th>
+<th style="text-align: left;">Landline/mobile…26</th>
+<th style="text-align: left;">Landline/mobile…27</th>
+<th style="text-align: left;">Awareness of EU co-financed projects…28</th>
+<th style="text-align: left;">Awareness of EU co-financed projects…29</th>
+<th style="text-align: left;">Impact of EU support on the development of cities/regions…30</th>
+<th style="text-align: left;">Impact of EU support on the development of cities/regions…31</th>
+<th style="text-align: left;">Impact of EU support on the development of cities/regions…32</th>
+<th style="text-align: left;">Personally benefited from ERDF or CF…33</th>
+<th style="text-align: left;">Personally benefited from ERDF or CF…34</th>
+<th style="text-align: left;">SheetName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">401</td>
+<td style="text-align: left;">200</td>
+<td style="text-align: left;">199</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">27</td>
+<td style="text-align: left;">122</td>
+<td style="text-align: left;">105</td>
 <td style="text-align: left;">147</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">29</td>
-<td style="text-align: left;">59</td>
-<td style="text-align: left;">74</td>
-<td style="text-align: left;">125</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">98</td>
-<td style="text-align: left;">160</td>
-<td style="text-align: left;">26</td>
-<td style="text-align: left;">93</td>
-<td style="text-align: left;">121</td>
-<td style="text-align: left;">72</td>
-<td style="text-align: left;">78</td>
-<td style="text-align: left;">123</td>
-<td style="text-align: left;">41</td>
-<td style="text-align: left;">42</td>
-<td style="text-align: left;">48</td>
-<td style="text-align: left;">105</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">131</td>
+<td style="text-align: left;">158</td>
 <td style="text-align: left;">218</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">66</td>
-<td style="text-align: left;">243</td>
-<td style="text-align: left;">42</td>
-<td style="text-align: left;">212</td>
-<td style="text-align: left;">18</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">141</td>
+<td style="text-align: left;">168</td>
+<td style="text-align: left;">93</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">401</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">62</td>
+<td style="text-align: left;">177</td>
 <td style="text-align: left;">5</td>
-<td style="text-align: left;">124</td>
-<td style="text-align: left;">149</td>
+<td style="text-align: left;">157</td>
+<td style="text-align: left;">329</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">69</td>
+<td style="text-align: left;">314</td>
+<td style="text-align: left;">87</td>
+<td style="text-align: left;">279</td>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">160</td>
+<td style="text-align: left;">223</td>
+<td style="text-align: left;">D22</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">28.4</td>
-<td style="text-align: left;">28.3</td>
-<td style="text-align: left;">28.4</td>
-<td style="text-align: left;">30.4</td>
-<td style="text-align: left;">24.2</td>
-<td style="text-align: left;">23.8</td>
-<td style="text-align: left;">26.3</td>
-<td style="text-align: left;">34.5</td>
-<td style="text-align: left;">17.100000000000001</td>
-<td style="text-align: left;">24.2</td>
-<td style="text-align: left;">32.200000000000003</td>
-<td style="text-align: left;">28.1</td>
-<td style="text-align: left;">23.3</td>
-<td style="text-align: left;">29.5</td>
-<td style="text-align: left;">36.5</td>
-<td style="text-align: left;">28.9</td>
-<td style="text-align: left;">30.7</td>
-<td style="text-align: left;">24.4</td>
-<td style="text-align: left;">25.5</td>
-<td style="text-align: left;">29.5</td>
-<td style="text-align: left;">26.7</td>
-<td style="text-align: left;">15.7</td>
-<td style="text-align: left;">30.3</td>
-<td style="text-align: left;">26.5</td>
-<td style="text-align: left;">30.1</td>
-<td style="text-align: left;">36.700000000000003</td>
-<td style="text-align: left;">33.299999999999997</td>
-<td style="text-align: left;">15.7</td>
-<td style="text-align: left;">33.6</td>
-<td style="text-align: left;">40.200000000000003</td>
-<td style="text-align: left;">26.9</td>
-<td style="text-align: left;">34.4</td>
-<td style="text-align: left;">25.1</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">168</td>
+<td style="text-align: left;">86</td>
+<td style="text-align: left;">82</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">32</td>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">65</td>
+<td style="text-align: left;">42</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">58</td>
+<td style="text-align: left;">84</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">77</td>
+<td style="text-align: left;">64</td>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">168</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">74</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">62</td>
+<td style="text-align: left;">140</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">121</td>
+<td style="text-align: left;">45</td>
+<td style="text-align: left;">101</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">72</td>
+<td style="text-align: left;">87</td>
+<td style="text-align: left;">D22</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">B C</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">B</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">A</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">A</td>
-<td style="text-align: left;">B</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">B</td>
-<td style="text-align: left;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Yes, I am aware about the Adriatic and the Ionian Sea area strategy</td>
-<td style="text-align: left;">105</td>
-<td style="text-align: left;">49</td>
-<td style="text-align: left;">56</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">16</td>
-<td style="text-align: left;">28</td>
-<td style="text-align: left;">18</td>
-<td style="text-align: left;">44</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">33</td>
-<td style="text-align: left;">57</td>
-<td style="text-align: left;">15</td>
-<td style="text-align: left;">37</td>
-<td style="text-align: left;">47</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">25</td>
-<td style="text-align: left;">45</td>
-<td style="text-align: left;">17</td>
-<td style="text-align: left;">18</td>
-<td style="text-align: left;">18</td>
-<td style="text-align: left;">30</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">56</td>
-<td style="text-align: left;">85</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">20</td>
+<td style="text-align: left;">4+</td>
+<td style="text-align: left;">164</td>
+<td style="text-align: left;">79</td>
 <td style="text-align: left;">83</td>
-<td style="text-align: left;">21</td>
-<td style="text-align: left;">64</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">33</td>
+<td style="text-align: left;">38</td>
+<td style="text-align: left;">61</td>
+<td style="text-align: left;">32</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">77</td>
+<td style="text-align: left;">56</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">104</td>
+<td style="text-align: left;">45</td>
 <td style="text-align: left;">14</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">33</td>
-<td style="text-align: left;">64</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">10.4</td>
-<td style="text-align: left;">10.1</td>
-<td style="text-align: left;">10.8</td>
-<td style="text-align: left;">6.5</td>
-<td style="text-align: left;">13.3</td>
-<td style="text-align: left;">11.2</td>
-<td style="text-align: left;">6.5</td>
-<td style="text-align: left;">12</td>
-<td style="text-align: left;">6.1</td>
-<td style="text-align: left;">8.3000000000000007</td>
-<td style="text-align: left;">11.4</td>
-<td style="text-align: left;">15.7</td>
-<td style="text-align: left;">9.4</td>
-<td style="text-align: left;">11.4</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">9.4</td>
-<td style="text-align: left;">11.3</td>
-<td style="text-align: left;">9.9</td>
-<td style="text-align: left;">10.8</td>
-<td style="text-align: left;">11.4</td>
-<td style="text-align: left;">7.6</td>
-<td style="text-align: left;">6.3</td>
-<td style="text-align: left;">13</td>
-<td style="text-align: left;">10.4</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">11.1</td>
-<td style="text-align: left;">11.4</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">10.199999999999999</td>
-<td style="text-align: left;">31.4</td>
-<td style="text-align: left;">2.1</td>
-<td style="text-align: left;">9.1999999999999993</td>
-<td style="text-align: left;">10.7</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">164</td>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">55</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">75</td>
+<td style="text-align: left;">121</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">42</td>
+<td style="text-align: left;">95</td>
+<td style="text-align: left;">65</td>
+<td style="text-align: left;">77</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">48</td>
+<td style="text-align: left;">112</td>
+<td style="text-align: left;">D22</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">C</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">B</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">A C</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Don’t know</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">D22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Refusal</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">D22</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mean</td>
+<td style="text-align: left;">2.4</td>
+<td style="text-align: left;">2.4</td>
+<td style="text-align: left;">2.2999999999999998</td>
+<td style="text-align: left;">3.9</td>
+<td style="text-align: left;">2.9</td>
+<td style="text-align: left;">2.2999999999999998</td>
+<td style="text-align: left;">2.6</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">2.4</td>
+<td style="text-align: left;">2.2000000000000002</td>
+<td style="text-align: left;">2.8</td>
+<td style="text-align: left;">2.7</td>
+<td style="text-align: left;">2.1</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">4.8</td>
+<td style="text-align: left;">2.4</td>
+<td style="text-align: left;">2.2999999999999998</td>
+<td style="text-align: left;">2.9</td>
+<td style="text-align: left;">2.2999999999999998</td>
+<td style="text-align: left;">2.2999999999999998</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2.6</td>
+<td style="text-align: left;">2.2000000000000002</td>
+<td style="text-align: left;">2.7</td>
+<td style="text-align: left;">2.2000000000000002</td>
+<td style="text-align: left;">2.2000000000000002</td>
+<td style="text-align: left;">2.7</td>
+<td style="text-align: left;">2.4</td>
+<td style="text-align: left;">2.4</td>
+<td style="text-align: left;">D22</td>
 </tr>
 </tbody>
 </table>

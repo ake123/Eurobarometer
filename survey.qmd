@@ -40,7 +40,7 @@ EUI ICT Service instructions on using ZIP files to compress and decompress data 
 European statistical data resources (EUI Library).
 
  
-## Gesis survey Data
+## GESIS survey Data
 
 
 Data was taken from [here](https://search.gesis.org/?source=%7B%22sort%22%3A%5B%7B%22date_recency%22%3A%7B%22order%22%3A%22desc%22%7D%7D%5D%2C%22query%22%3A%7B%22bool%22%3A%7B%22must%22%3A%5B%7B%22query_string%22%3A%7B%22query%22%3A%22economic%22%2C%22default_operator%22%3A%22AND%22%7D%7D%5D%2C%22filter%22%3A%5B%7B%22term%22%3A%7B%22type%22%3A%22research_data%22%7D%7D%2C%7B%22term%22%3A%7B%22study_group.keyword%22%3A%22EB%20-%20Standard%20and%20Special%20Eurobarometer%22%7D%7D%5D%7D%7D%7D&lang=en) with data format ".sav"
@@ -67,32 +67,54 @@ haven::read_sav(tmp)
 
 For data taken from EU with ".xslx" format taken from [here](https://data.europa.eu/data/datasets/s2970_fl531_eng?locale=en) and it's only for testing purpose.
 
-```{r}
-#| label = "load-pkg-data"
 
-# Load the readxl package
+
+```{r}
+
 library(readxl)
+library(tibble)
+library(dplyr)
 
 # Specify the path to your Excel file
-excel_file <- "survey/fl_531_volume_C_SK.xlsx"
+excel_file <- "survey/fl_531_volume_C_SK.xlsx" 
 
 # Get the names of all sheets in the Excel file
 sheet_names <- excel_sheets(excel_file)
 
-# Initialize an empty list to store data frames
-data_frames <- list()
+# Initialize an empty tibble to store the combined data
+combined_data <- tibble()
 
-# Read each sheet and store it as a separate data frame
-for (i in 3:length(sheet_names)) {
-  sheet_name <- sheet_names[i]
-  # Specify the range (rows 10-26 and all columns)
-  range <- cell_rows(10:26)
-  data_frames[[sheet_name]] <- read_excel(excel_file, sheet = sheet_name, range = range)
+# Read each sheet (starting from the third sheet) and append to the combined data frame
+for (sheet_name in sheet_names[3:length(sheet_names)]) {
+  # Define the range to read (rows 11 to 26)
+  range_to_read <- cell_rows(11:58)
+
+  # Read the current sheet as a tibble within the specified range
+  current_data <- as_tibble(
+    read_excel(excel_file, sheet = sheet_name, range = range_to_read)
+  )
+
+  # Add a column to identify the sheet (survey question)
+  current_data$SheetName <- sheet_name
+
+  # Bind the current data to the combined data frame
+  combined_data <- bind_rows(combined_data, current_data)
 }
+combined_data <- na.omit(combined_data)
 
+# # Define a threshold for NA proportion
+# threshold <- 0.9 # Example: 90% NA values
+# 
+# # Remove columns where the majority of values are NA
+# na_cols <- sapply(combined_data, function(x) mean(is.na(x))) > threshold
+# combined_data <- combined_data[, !na_cols]
+# 
+# # Display the structure of the combined data frame
+str(combined_data)
 
-# Optional: Convert the list to separate data frames
-list2env(data_frames, envir = .GlobalEnv)
-knitr::kable(Q9)
+# Optionally, view the first few rows of the combined data
+knitr::kable(head(combined_data))
+
 
 ```
+
